@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dev1ls</title>
+    <link>http://dev1lsconf.github.io/</link>
+    <description>Recent content on dev1ls</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Mar 2023 09:43:12 -0400</lastBuildDate><atom:link href="http://dev1lsconf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configurando Wifi en OpenBSD</title>
+      <link>http://dev1lsconf.github.io/posts/configurando-wifi-en-openbsd/</link>
+      <pubDate>Sun, 12 Mar 2023 09:43:12 -0400</pubDate>
+      
+      <guid>http://dev1lsconf.github.io/posts/configurando-wifi-en-openbsd/</guid>
+      <description>Como configurar wifi en OpenBSD</description>
+    </item>
+    
+    <item>
+      <title>Mi Experiencia Con OpenBSD</title>
+      <link>http://dev1lsconf.github.io/posts/mi-experiencia-con-openbsd/</link>
+      <pubDate>Sun, 12 Mar 2023 09:30:27 -0400</pubDate>
+      
+      <guid>http://dev1lsconf.github.io/posts/mi-experiencia-con-openbsd/</guid>
+      <description>otro post de prueba.. pero tengo muy buenos momentos con openbsd hahhha</description>
+    </item>
+    
+    <item>
+      <title>Dwm vs Bspwm vs Cwm</title>
+      <link>http://dev1lsconf.github.io/posts/dwm-bspwm-cwm/</link>
+      <pubDate>Sun, 12 Mar 2023 08:41:02 -0400</pubDate>
+      
+      <guid>http://dev1lsconf.github.io/posts/dwm-bspwm-cwm/</guid>
+      <description>hola esto es solo de prueba!!</description>
+    </item>
+    
+    <item>
+      <title>Contacto</title>
+      <link>http://dev1lsconf.github.io/contacto/</link>
+      <pubDate>Sun, 12 Mar 2023 08:34:55 -0400</pubDate>
+      
+      <guid>http://dev1lsconf.github.io/contacto/</guid>
+      <description>Este es el contacto con los administradores del sitio web.
+Email Teléfono Twitter </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://dev1lsconf.github.io/posts/configurando-wifi-en-openbsd/</loc>
+    <lastmod>2023-03-12T09:43:12-04:00</lastmod>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/</loc>
+    <lastmod>2023-03-12T09:43:12-04:00</lastmod>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/posts/</loc>
+    <lastmod>2023-03-12T09:43:12-04:00</lastmod>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/posts/mi-experiencia-con-openbsd/</loc>
+    <lastmod>2023-03-12T09:30:27-04:00</lastmod>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/posts/dwm-bspwm-cwm/</loc>
+    <lastmod>2023-03-12T08:41:02-04:00</lastmod>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/contacto/</loc>
+    <lastmod>2023-03-12T08:34:55-04:00</lastmod>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/categories/</loc>
+  </url><url>
+    <loc>http://dev1lsconf.github.io/tags/</loc>
+  </url>
+</urlset>
