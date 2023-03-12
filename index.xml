@@ -6,7 +6,16 @@
     <description>Recent content on dev1ls</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Mar 2023 09:43:12 -0400</lastBuildDate><atom:link href="http://dev1lsconf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 10:06:26 -0400</lastBuildDate><atom:link href="http://dev1lsconf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Invidious Youtube Without Ads</title>
+      <link>http://dev1lsconf.github.io/posts/invidious-youtube-without-ads/</link>
+      <pubDate>Sun, 12 Mar 2023 10:06:26 -0400</pubDate>
+      
+      <guid>http://dev1lsconf.github.io/posts/invidious-youtube-without-ads/</guid>
+      <description>Plataforma para ver youtube sin ads</description>
+    </item>
+    
     <item>
       <title>Configurando Wifi en OpenBSD</title>
       <link>http://dev1lsconf.github.io/posts/configurando-wifi-en-openbsd/</link>
