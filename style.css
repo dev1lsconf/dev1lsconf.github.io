@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* Reemplaza esta URL con tu GIF favorito */
+    background-image: url('./dev1ls.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+/* --- ESTILOS CORREGIDOS PARA EL BOTÓN --- */
+.boton-moderno {
+    /* Estilos que ya teníamos */
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 30px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+
+    /* --- LA LÍNEA MÁGICA QUE LO ARREGLA TODO --- */
+    text-decoration: none; /* <-- ¡AÑADE ESTO! Quita el subrayado del enlace. */
+}
+
+/* El efecto hover no necesita cambios, seguirá funcionando */
+.boton-moderno:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
