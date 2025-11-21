@@ -1,48 +1,82 @@
+/* --- 1. FONDO Y ESTILOS GENERALES (MÁS SIMPLE) --- */
 body {
     margin: 0;
     padding: 0;
-    /* Reemplaza esta URL con tu GIF favorito */
-    background-image: url('./dev1ls.gif');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+    min-height: 100vh; /* Usa min-height para que funcione bien en cualquier pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* Colores Simples: Negro y Blanco */
+    background-color: #000000; 
+    color: #f0f0f0; /* Blanco roto para el texto */
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
+/* --- 2. CONTENIDO CENTRAL (LIMPIO) --- */
 .contenido {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 15px;
+    background-color: transparent; /* No hay fondo en la caja, solo en el body */
+    padding: 20px;
+    max-width: 500px; /* Limitar el ancho en escritorio */
+    width: 100%;
+    /* Quitamos todas las sombras para un look más plano */
 }
 
-/* --- ESTILOS CORREGIDOS PARA EL BOTÓN --- */
-.boton-moderno {
-    /* Estilos que ya teníamos */
+.titulo-minimalista {
+    font-size: 3.5em; /* Tamaño grande para el único texto */
+    font-weight: 800; /* Negrita */
+    margin-top: 0;
+    margin-bottom: 40px;
+    /* Color de acento muy sutil, como un gris muy claro */
+    color: #f0f0f0; 
+    text-transform: lowercase; /* Para que quede todo en minúscula (dev1ls) */
+}
+
+/* --- 3. BOTONES MINIMALISTAS Y RESPONSIVOS --- */
+.botones {
+    display: flex;
+    flex-direction: column; /* APILAR POR DEFECTO para móviles */
+    gap: 15px; /* Espacio entre botones */
+    justify-content: center;
+    align-items: center; /* Centra los botones que se apilan */
+}
+
+.boton-minimal {
+    /* Reseteo */
+    text-decoration: none; 
+    width: 100%; /* Ocupa todo el ancho del contenedor .botones (max 500px) */
+    max-width: 300px; /* Limitar el ancho máximo */
+    
+    /* Estilos Planos y Minimalistas */
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 15px 30px;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 20px 2px;
+    border: 1px solid #f0f0f0; /* Borde fino y claro */
+    color: #f0f0f0; 
+    padding: 15px 25px;
+    font-size: 1em;
+    font-weight: 500;
     cursor: pointer;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-
-    /* --- LA LÍNEA MÁGICA QUE LO ARREGLA TODO --- */
-    text-decoration: none; /* <-- ¡AÑADE ESTO! Quita el subrayado del enlace. */
+    border-radius: 5px; 
+    transition: all 0.2s ease-in-out;
 }
 
-/* El efecto hover no necesita cambios, seguirá funcionando */
-.boton-moderno:hover {
-    background-color: white;
-    color: black;
-    transform: scale(1.05);
+/* Efecto hover: Invertir colores de forma simple */
+.boton-minimal:hover {
+    background-color: #f0f0f0; /* Fondo se vuelve claro */
+    color: #000000; /* Texto se vuelve negro */
+    transform: none; /* Quitamos las transformaciones */
+}
+
+/* Media Query: Para pantallas de escritorio (más de 600px) */
+@media (min-width: 600px) {
+    .botones {
+        /* En escritorio, los ponemos en una fila más espaciada */
+        flex-direction: row; 
+        flex-wrap: wrap;
+        gap: 20px 10px; /* Separación vertical y horizontal */
+    }
+    .boton-minimal {
+        width: auto; /* El ancho se ajusta al contenido */
+        max-width: none;
+    }
 }
