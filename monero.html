@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi wallet Monero</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .qr-container {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            border: 8px solid #ff6600;
+            border-radius: 15px;
+        }
+        p {
+            color: #ff6600;
+            font-size: 18px;
+            margin-top: 20px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="qr-container">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=43fym2LvsxTEWUzb3DQ9QsGRBUt9W1udgNx2yqZQGGg1iA2YcJWQhy1dXoKH44ngj9RXeNCe8xAV25dCdnpQHyjyL2gWfVZ" alt="Monero QR">
+        <p>43fym2LvsxTEWUzb3DQ9QsGRBUt9W1udgNx2yqZQGGg1iA2YcJWQhy1dXoKH44ngj9RXeNCe8xAV25dCdnpQHyjyL2gWfVZ</p>
+    </div>
+
+</body>
+</html>
