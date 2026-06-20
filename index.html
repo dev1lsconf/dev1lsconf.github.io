@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev1ls</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #111;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            transition: opacity 0.3s ease;
+        }
+
+        .avatar:hover {
+            opacity: 0.7;
+        }
+
+        .logo {
+            font-size: 7rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: #000;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .sub {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        .twt {
+            margin-top: 3rem;
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.7;
+            padding: 0 1rem;
+        }
+
+        .twt-time {
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            color: #bbb;
+        }
+
+        .dialog {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f5f5f5;
+            color: #999;
+            padding: 0.4rem 1.25rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 100;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 4.5rem;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 3rem;
+            }
+            .twt {
+                font-size: 1rem;
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">en construcción</div>
+    <img class="avatar" src="https://res.cloudinary.com/djeqn9kjl/image/upload/v1781920013/eric_oumzl2.png" alt="avatar">
+    <div class="logo">dev1ls</div>
+    <div class="sub">sdf.org</div>
+    <div class="twt" id="twt"></div>
+
+    <script>
+        async function loadTwt() {
+            const el = document.getElementById('twt');
+            try {
+                const res = await fetch('twtxt.txt');
+                if (!res.ok) throw new Error();
+                const text = await res.text();
+                const lines = text.split('\n').filter(l => l.trim());
+                if (!lines.length) return;
+                const last = lines[lines.length - 1];
+                const parts = last.split('\t');
+                if (parts.length < 2) return;
+                const ts = parts[0];
+                const content = parts.slice(1).join('\t');
+                let dateStr = ts;
+                try {
+                    const d = new Date(ts);
+                    if (!isNaN(d.getTime())) {
+                        dateStr = d.toLocaleDateString('es-ES', {
+                            year: 'numeric', month: 'long', day: 'numeric',
+                            hour: '2-digit', minute: '2-digit'
+                        });
+                    }
+                } catch (_) {}
+                el.innerHTML = `${content}<div class="twt-time">${dateStr}</div>`;
+            } catch (_) {
+                el.textContent = '';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadTwt);
+    </script>
+</body>
+</html>

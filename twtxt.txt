@@ -1,0 +1,130 @@
+# nick			 = dev1ls
+# url			 = http://dev1ls.sdf.org/twtxt.txt
+# avatar		 = https://texto-plano.xyz/~dev1ls/logo.png
+# description		 = *BSD/Linux User, interested in networking, still learning.
+# lang			 = es
+#
+# follow		 = texto-plano https://texto-plano.xyz/twtxt.txt
+# follow		 = yejokjanan https://texto-plano.xyz/~yejokjanan/twtxt.txt 
+# follow		 = peron https://texto-plano.xyz/~peron/twtxt.txt 
+
+2024-01-03T03:47:33-04:00	Un nuevo Comienzo.. #OpenBSD #Hardening
+2024-01-03T03:49:23-04:00	un poco agripado.. :/
+2024-01-13T07:19:20-04:00	wow.. instale fedora.. :X #Linux
+2024-01-14T06:12:49-04:00	y creo que es tan la diferencia de lo que busco como SO.. que como laptop de trabajo.. me facina!!!
+2024-01-16T19:48:22-04:00	ahora miss sistemas son Fedora y OpenBSD
+2024-01-19T04:13:41-04:00	Empece probando muchos distros nuevamente.. al final siempre seran arch, alpine, nixos u openbsd :/
+2024-01-22T19:30:53-04:00	New OpenBSD instalation.. -current version.. restoring my dotfiles wright now
+2024-01-25T20:43:21-04:00	watching 76ers vs Pacers :O
+2024-01-27T01:01:18-04:00	learning Nix.. but the lenguage...damn.. bro im done!
+2024-01-27T17:14:14-04:00	syncthing at NixOS.. https://puffybsd.space/u/dev1ls/h/28PXw2LT8CRt3zDsng
+2024-05-01T17:09:17+00:00	my first twtxt from spain!!! wow im feeling good!
+2024-05-01T17:16:20+00:00	good music and good beer..
+2024-06-19T00:38:20+02:00	por fin corriendo OpenBSD.. home sweet home
+2024-06-23T02:13:54+02:00	Domingos de *BSD.. aparte de programar siempre me gusta aprender algo diferennte sobre Unix
+2024-07-08T17:34:37+02:00	wow.. mucho calor!
+2024-07-09T17:47:45+02:00	sigo acomodandome en una maquina virtual en OpenBSD :( algo es algo..
+2024-07-16T20:40:26+02:00	no me gustan los aereopuertos ni los viajes largos en trenes.. pero wow me encanta el resultado! feliz en Cadiz, Spaon!
+2024-07-20T17:26:38+02:00	syspatch
+2024-07-26T23:32:31+02:00	moving to barcelona! :)
+2024-08-29T02:06:43+02:00	Altas y bajas.. pero la estoy pasando bien #Spain
+2024-09-25T06:47:44+02:00	Based in Barcelona rigth now! :P
+2024-09-28T02:23:18+02:00	Probando mi internet.. 3,2,1... #Barcelona
+2024-11-12T01:50:10+01:00	dilema.. si instalar OpenBSD en mi M900 o dejar NixOS que la verdad me tiene muy contento
+2025-01-20T00:05:42+01:00	alive!
+2025-02-28T08:46:57+01:00	quiero OpenBSD.. pero necesito Bluethoot.. :( #dilema
+2025-02-28T09:06:04+01:00	sin OpenBSD, ni NixOS o alpine.. se siente un poco extraño.. xD
+2025-03-10T20:13:21+01:00	BCN mood :)
+2025-03-18T18:38:11+01:00	demasiado frio barcelona para alguien que viene del caribe :P
+2025-04-09T22:22:20+02:00	en el 2025 todavia usando DWM o CWM..
+2025-04-10T00:10:49+02:00	me encanta ncmpcpp.. lo recomiendo!
+2025-04-10T19:44:24+02:00	Me siento un poco mas yo ahora que tengo tiempo para estar en mi computadora..
+2025-04-14T00:46:18+02:00	LAC vs GS #NBA *onfire* hehehe :)
+2025-04-14T23:04:07+02:00	syspatch my system.. https://0x0.st/8fQN.png
+2025-04-14T23:08:38+02:00	Pizza and OpenBSD :)
+2025-04-19T04:04:38+02:00	Dallas VS Memphis #NBA #Play-in
+2025-04-21T20:18:35+02:00	Muy buena mezcla.. altamente recomendable.. Petre Inspirescu
+2025-04-21T22:35:30+02:00	* openbsdnow@bsd.network * -  OpenBSD 7.7 is coming...
+2025-04-22T06:36:11+02:00	Watching LAC vs DEN #Playoffs #NBA
+2025-04-23T12:11:30+02:00	Soy yo o SDF tiene desde ayer shutdown!?
+2025-04-23T16:21:40+02:00	SDF its back! <3
+2025-04-23T16:27:29+02:00	SDF its back! <3
+2025-04-23T21:50:45+02:00	<dev1ls> nota interna..ya tengo que hacerme de un teclado de verdad :X #IRC
+2025-04-25T17:14:28+02:00	ejemplo de mi mpd.conf https://0x0.st/8VlL.conf
+2025-04-25T20:25:39+02:00	nuevos projectos! algunos en python otros en simple html!!
+2025-04-25T23:27:57+02:00	Does the emerald lose its beauty for lack of admiration?
+2025-04-27T17:26:53+02:00	domingo de escritorio? xD https://0x0.st/8WZO.png
+2025-04-27T21:17:18+02:00	probando mi nuevo tui para twtxt :P #TUI #python
+2025-04-28T00:30:30+02:00	twtxt tui - como va quedando??? https://0x0.st/8Wc4.png
+2025-04-28T11:39:48+02:00	@<yejokjanan https://texto-plano.xyz/~yejokjanan/twtxt.txt> hey ya viste la nueva temporada de black mirror???
+2025-04-29T02:12:57+02:00	@<yejokjanan https://texto-plano.xyz/~yejokjanan/twtxt.txt> la de tetris ( netlix ) tu dices?
+2025-04-29T10:29:49+02:00	@<yejokjanan https://texto-plano.xyz/~yejokjanan/twtxt.txt> siii que la pelicula es interactiva.. muy interesante y original!
+2025-04-29T14:21:06+02:00	hoy es un dia muy especial para mi.. <3
+2025-04-30T02:12:00+02:00	@<peron https://texto-plano.xyz/~peron/twtxt.txt> wow 1650 cd??? ahi tiene que estar hasta la lambada. xD cuanto emites? quiero escucharlo! xD
+2025-04-30T04:28:46+02:00	ya estoy perdiendo la cabeza!!  hahahha https://0x0.st/8WZO.png #python
+2025-05-01T02:58:44+02:00	@<yejokjanan https://texto-plano.xyz/~yejokjanan/twtxt.txt> hahaha wow muy cool.. bienvenido a twitter desde una terimal y decentralizado xD
+2025-05-03T09:21:41+02:00	monolithic <3
+2025-05-08T16:12:42+02:00	@<yejokjanan https://texto-plano.xyz/~yejokjanan/twtxt.txt> sobre #technitium/dns voy a mirarlo mejor en una vm en #alpline para ver como funciona.. :)
+2025-05-10T16:22:56+02:00	ya estamos de vuelta 🔥
+2025-05-11T16:47:10+02:00	mucho tiempo sin usar #gemini.. gemini://bbs.geminispace.org/ es un buen foro! 
+2025-05-11T18:10:31+02:00	sundays! https://0x0.st/8yq5.jpg #grok
+2025-05-11T18:16:58+02:00	de vuelta a tinylog! -> gemini://station.martinrue.com/dev1lsx/tinylog #logs
+2025-05-11T21:55:15+02:00	my new plant gemini://astrobotany.mozz.us/public/7c5f294a97154557af2bf0f8ecb8c1ec/m1 #astrobotany
+2025-05-11T22:50:14+02:00	DEN vs OKC #NBA #Playoffs
+2025-05-14T23:30:16+02:00	escuchando barak @ club eden.. wow increible set! #playing
+2025-05-19T14:11:27+02:00	vim + ollama <3 http://t.ly/torg5 #vim #ollama
+2025-05-19T14:19:58+02:00	starcoder2:3b no esta nada mal.. #ollama
+2025-05-20T00:23:32+02:00	nvim + Avante 🚀 https://0x0.st/8wc1.png #nvim #ollama
+2025-05-22T02:04:10+02:00	🔥 IND vs NYK 🏀 #NBA #Playoffs
+2025-05-22T21:20:04+02:00	twtxt_tui app! https://github.com/dev1lsconf/twtxt_tui #app #python #twtxt
+2025-05-22T23:44:20+02:00	ejemplo de mi .config/twtxt/config https://termbin.com/vfp6 #twtxt #config #example
+2025-05-24T02:11:22+02:00	🔥 IND vs NYK 🏀  Game 2 https://0x0.st/8xin.png #NBA #East #Finals 
+2025-05-25T19:27:13+02:00	Perecimos porque seguimos los ejemplos de otros hombres: deberíamos curarnos de esto si nos desconectamos del rebaño. #seneca #quotes
+2025-05-27T02:25:12+02:00	🔥 MIN vs OKC 🏀 #NBA #west #finals
+2025-06-01T02:19:28+02:00	muy buen proyecto de IPTV web y bueno para correrlo en docker https://t.ly/P_KFP #docker #streamdock #IPTV
+2025-06-01T04:47:00+02:00	🏀 IND WIN 🔥 🔥  #NBA #East #Finals
+2025-06-04T01:55:31+02:00	wow.. como que me esta empezando a gustar #Hyprland #Wayland 😮
+2025-06-06T02:25:27+02:00	🏀 IND vs OKC � #NBA #Finals 🔥🔥🔥🔥
+2025-06-08T01:55:41+02:00	enamorado de este avance de #hyprland <3 #wayland #hyperluna
+2025-06-08T02:41:19+02:00	twtxt its dead my friends! my first twt from twtwt #twtxt #dead
+2025-06-08T03:08:22+02:00	vamos a tener que crear una version mas moderna de twtxt... #Dev #Mode
+2025-06-09T03:36:28+02:00	Bienvenidos al verano #BCN 
+2025-06-14T03:23:53+02:00	meee mueeeroooooo del calooooooooorrrr!!!!  #BCN 
+2025-06-14T04:54:17+02:00	🏀 OKC vs IND 🔥  #NBA #Finals 
+2025-06-25T03:27:24+02:00	wow como termine aqui.. por uns dias solo tengo #android #nixondroid #termux xD
+2025-06-27T14:51:35+02:00	no puedo quejarme #nixondroid es un NixOS totalmente funcional!
+2025-06-30T09:00:44+02:00	NixOS its Back! xD
+2025-06-30T22:16:37+02:00	tanto tiempo usando #NixOS y no me llama para nada la atencion #Flakes alguien me lo explica??
+2025-07-07T00:08:40+00:00	bueno.. bueno.. lo admito.. me gusta #flakes :) tengo flake.nix por todos lados :x
+2025-07-15T05:42:22+02:00	wow.. #NixOS me tiene un poco comprado xD
+2025-07-16T06:36:10+02:00	wow! #Hyprland + #NixOS me encanta! pronto compartire mi configuracion..
+2025-07-16T14:08:32+02:00	lo prometido es deuda.. aqui les dejo mi configuracion.. https://github.com/dev1lsconf/nixos-config #Hyprland + #NixOS
+2025-07-20T05:45:30+02:00	https://0x0.st/8d0X.gif #art #ia #video
+2025-07-22T00:27:34+02:00	check my shit plis! xD https://dev1lsconf.github.io/
+2025-07-23T05:38:41+02:00	yggdrasil Network  <3 http://[200:6823:aabc:7629:cd2d:e9d7:cf7f:c6f8] #ygg #httpd #ergo #ipv6
+2025-08-02T04:01:35+02:00	🚀  BCN #nix #dev #ygg
+2025-08-16T08:20:34+02:00	calor!!!!! 🌞 #BCN
+2025-09-09T01:30:15+02:00	Sigo vivo! #BCN
+2025-09-23T02:03:02+02:00	the winter its coming #BCN
+2025-09-28T08:20:19+02:00	siempre aparece algo que hace que me enamore de IRC #soju #senpai #IRC
+2025-10-19T19:41:36+02:00	Playing Troy Pierce - Tresor Berlin 3.3.17 at home.. just good music and #NixOS
+2025-10-22T20:14:02+02:00	Empezamos con nixos-containers y ya tenemos #ergo y #honk deforma declarativa.. y todo bajo la ipv6 de #yggdrasil
+2025-10-25T07:25:01+02:00	Nuevos Proyectos, Nueva imagen, nuevo todo! #BCN #logo #Tech #Dev
+2025-10-25T14:40:48+02:00	Nuevo Post:  https://dev1ls.deno.dev/yggdrasil-la-red-mesh-ipv6-descentralizada  #NixOS #ipv6 #yggdrasil #Dev
+2025-10-31T16:56:54+01:00	Buscame en Yggdrasil http://dev1ls.ygg.at/  #NixOS #ipv6 #yggdrasil #Domain
+2025-11-08T16:36:27+01:00	Disfrutando de el frio, mi balcon, mi tablet y #Termux #B
+2025-11-08T18:17:39+01:00	Algunas fallas pero segumos en pie! Dnet! #ipv6 #ygg #b #radio
+2025-11-09T08:44:40+01:00	Un servidor casero totalmente declarativo.. todo esta ahi.. #NixOS! #ipv6 #ygg #b
+2025-11-16T05:19:12+01:00	Hey siento poco animo con las nuevas aventuras.. ³Yggdrasil #Deltachat #ipv6 #i2p #tor #selfhoting #community
+2025-11-20T02:16:08+01:00	acabo de montar un ssh-chat: ssh tunick@<dev1ls http://dev1ls.sdf.org/twtxt.txt>.ygg.at #Yggdrasil #ipv6
+2025-11-23T00:54:46+01:00	Saludos muy especial para [Gatito] http://gatito.ygg.at  #Yggdrasil #ipv6
+2025-12-10T05:45:45+01:00	Vaya diciembre.. pero que nunca se pierda el animo!  #xmas #lab #BCN
+2025-12-12T03:19:12+01:00	Las ideas van apareciendo.. lo que no se puede es perder la fe!
+2025-12-12T21:45:34+01:00	tengo 2 o 3 ideas de proyectos sencillas y muy buenas.. para aquellos que quieran colaborar.. dev1ls@sdf.org
+2025-12-15T22:19:36+01:00	Es dificil entender la condicion humana..
+2025-12-20T09:06:20+01:00	Livestream caseros con #Owncast en #yggdrasil aqui la addr http://live.dev1ls.org
+2025-12-22T00:59:20+01:00	despues de mucho tiempo usando gnome con algunas extenciones muy cool que me daba la comodidad de un WM a llegado a su fin.. #CWM its Back!
+2025-12-22T01:56:29+01:00	Les invito a deleitarse con la 5ta edicion de la revista de Texto Plano texto-plano.xyz/revista/005/  📑🔥
+2026-01-15T08:51:35+01:00	y asi de facil ya estoy en #arch ahahahahah
+2026-03-27T01:29:53+01:00	wow mucho tiempo sin pasar por aqui.. como siempre.. altas y bajas! pero aqui seguimos!!!
+2026-03-27T02:03:23+01:00	im back!
