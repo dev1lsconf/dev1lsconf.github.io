@@ -45,12 +45,21 @@
             line-height: 1;
         }
 
-        .sub {
-            margin-top: 0.5rem;
-            font-size: 1rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #aaa;
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .links a:hover {
+            color: #000;
         }
 
         .dialog {
@@ -88,6 +97,11 @@
                 width: 100px;
                 height: 100px;
             }
+            .links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -95,8 +109,9 @@
     <div class="dialog">en construcción</div>
     <img class="avatar" src="https://res.cloudinary.com/djeqn9kjl/image/upload/v1781920013/eric_oumzl2.png" alt="avatar">
     <div class="logo">dev1ls</div>
-    <div class="sub">sdf.org</div>
-
-
+    <div class="links">
+        <a href="https://x.com/dev1lsconf" target="_blank">X</a>
+        <a href="https://mastodon.sdf.org/@dev1ls" target="_blank">Mastodon</a>
+    </div>
 </body>
 </html>
