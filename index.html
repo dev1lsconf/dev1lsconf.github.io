@@ -23,8 +23,8 @@
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 2rem;
@@ -53,22 +53,6 @@
             color: #aaa;
         }
 
-        .twt {
-            margin-top: 3rem;
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 600px;
-            text-align: center;
-            line-height: 1.7;
-            padding: 0 1rem;
-        }
-
-        .twt-time {
-            margin-top: 0.75rem;
-            font-size: 0.875rem;
-            color: #bbb;
-        }
-
         .dialog {
             position: fixed;
             top: 1.5rem;
@@ -91,8 +75,8 @@
                 font-size: 4.5rem;
             }
             .avatar {
-                width: 100px;
-                height: 100px;
+                width: 130px;
+                height: 130px;
             }
         }
 
@@ -100,12 +84,9 @@
             .logo {
                 font-size: 3rem;
             }
-            .twt {
-                font-size: 1rem;
-            }
             .avatar {
-                width: 80px;
-                height: 80px;
+                width: 100px;
+                height: 100px;
             }
         }
     </style>
@@ -115,38 +96,7 @@
     <img class="avatar" src="https://res.cloudinary.com/djeqn9kjl/image/upload/v1781920013/eric_oumzl2.png" alt="avatar">
     <div class="logo">dev1ls</div>
     <div class="sub">sdf.org</div>
-    <div class="twt" id="twt"></div>
 
-    <script>
-        async function loadTwt() {
-            const el = document.getElementById('twt');
-            try {
-                const res = await fetch('twtxt.txt');
-                if (!res.ok) throw new Error();
-                const text = await res.text();
-                const lines = text.split('\n').filter(l => l.trim());
-                if (!lines.length) return;
-                const last = lines[lines.length - 1];
-                const parts = last.split('\t');
-                if (parts.length < 2) return;
-                const ts = parts[0];
-                const content = parts.slice(1).join('\t');
-                let dateStr = ts;
-                try {
-                    const d = new Date(ts);
-                    if (!isNaN(d.getTime())) {
-                        dateStr = d.toLocaleDateString('es-ES', {
-                            year: 'numeric', month: 'long', day: 'numeric',
-                            hour: '2-digit', minute: '2-digit'
-                        });
-                    }
-                } catch (_) {}
-                el.innerHTML = `${content}<div class="twt-time">${dateStr}</div>`;
-            } catch (_) {
-                el.textContent = '';
-            }
-        }
-        document.addEventListener('DOMContentLoaded', loadTwt);
-    </script>
+
 </body>
 </html>
