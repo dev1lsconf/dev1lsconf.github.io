@@ -193,41 +193,12 @@
         </a>
     </div>
 
-    <div class="section" id="posts">
-        <div class="section-title">Últimos posts</div>
-        <ul class="section-list" id="postsList"></ul>
-    </div>
-
     <div class="section" id="repos">
         <div class="section-title">Repos</div>
         <ul class="section-list" id="reposList"></ul>
     </div>
 
     <script>
-        async function loadPosts() {
-            try {
-                const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://dev1ls.deno.dev/feed'));
-                if (!res.ok) throw new Error();
-                const xml = await res.text();
-                const doc = new DOMParser().parseFromString(xml, 'text/xml');
-                const entries = doc.querySelectorAll('entry');
-                const list = document.getElementById('postsList');
-                let count = 0;
-                for (const entry of entries) {
-                    if (count >= 3) break;
-                    const title = entry.querySelector('title')?.textContent || '';
-                    const link = entry.querySelector('link')?.getAttribute('href') || '';
-                    const pub = entry.querySelector('published')?.textContent || '';
-                    const date = pub ? new Date(pub).toLocaleDateString('es-ES', { year: 'numeric', month: 'short' }) : '';
-                    const li = document.createElement('li');
-                    li.innerHTML = `<a href="${link}" target="_blank">${title} <span class="date">${date}</span></a>`;
-                    list.appendChild(li);
-                    count++;
-                }
-                if (count) document.getElementById('posts').classList.add('visible');
-            } catch (_) {}
-        }
-
         async function loadRepos() {
             try {
                 const res = await fetch('https://api.github.com/users/dev1lsconf/repos?sort=updated&per_page=4&type=public');
@@ -243,7 +214,7 @@
             } catch (_) {}
         }
 
-        document.addEventListener('DOMContentLoaded', () => { loadPosts(); loadRepos(); });
+        document.addEventListener('DOMContentLoaded', () => { loadRepos(); });
     </script>
 </body>
 </html>
