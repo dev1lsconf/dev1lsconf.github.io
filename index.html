@@ -324,9 +324,15 @@
     <script>
         async function loadRepos() {
             try {
+                console.log('Loading repos...');
                 const res = await fetch('https://api.github.com/users/dev1lsconf/repos?sort=updated&per_page=12&type=public');
-                if (!res.ok) throw new Error();
+                console.log('Repos API status:', res.status);
+                if (!res.ok) {
+                    console.error('Failed to fetch repos:', res.status);
+                    return;
+                }
                 const repos = await res.json();
+                console.log('Repos found:', repos.map(r => r.name));
                 const grid = document.getElementById('reposGrid');
 
                 const langColors = {
@@ -373,7 +379,9 @@
                                 }
                             }
                         }
-                    } catch (_) {}
+                    } catch (e) {
+                        console.log('README fetch failed for', r.name, e);
+                    }
 
                     if (!imageUrl) {
                         imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
@@ -405,7 +413,9 @@
                     grid.appendChild(card);
                 }
                 if (grid.children.length) document.getElementById('repos').classList.add('visible');
-            } catch (_) {}
+            } catch (e) {
+                console.error('loadRepos error:', e);
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => { loadRepos(); initStarfield(); });
