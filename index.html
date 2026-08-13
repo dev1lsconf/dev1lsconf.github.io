@@ -324,15 +324,14 @@
     <script>
         async function loadRepos() {
             try {
-                console.log('Loading repos...');
-                const res = await fetch('https://api.github.com/users/dev1lsconf/repos?sort=updated&per_page=12&type=public');
-                console.log('Repos API status:', res.status);
-                if (!res.ok) {
-                    console.error('Failed to fetch repos:', res.status);
-                    return;
-                }
+                const res = await fetch('https://api.github.com/users/dev1lsconf/repos?per_page=20&type=public');
+                if (!res.ok) throw new Error(`API ${res.status}`);
                 const repos = await res.json();
-                console.log('Repos found:', repos.map(r => r.name));
+
+                const featuredNames = ['elitos-trading-terminal', '0880-ai-bot', 'financial-panel', 'tienda-informatica'];
+                const featured = repos.filter(r => !r.fork && featuredNames.includes(r.name));
+                if (!featured.length) return;
+
                 const grid = document.getElementById('reposGrid');
 
                 const langColors = {
@@ -342,51 +341,7 @@
                     'Vue': '#41b883', 'Svelte': '#ff3e00', 'Astro': '#ff5a03'
                 };
 
-                function hasImagesInReadme(readmeContent) {
-                    if (!readmeContent) return false;
-                    const markdownImages = readmeContent.match(/!\[.*?\]\((.*?)\)/g);
-                    const htmlImages = readmeContent.match(/<img\s+[^>]*src=["']([^"']+)["']/gi);
-                    return (markdownImages && markdownImages.length > 0) || (htmlImages && htmlImages.length > 0);
-                }
-
-                function extractFirstImage(readmeContent) {
-                    if (!readmeContent) return null;
-                    const mdMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/);
-                    if (mdMatch) return mdMatch[1];
-                    const htmlMatch = readmeContent.match(/<img\s+[^>]*src=["']([^"']+)["']/i);
-                    if (htmlMatch) return htmlMatch[1];
-                    return null;
-                }
-
-                const featuredRepos = ['elitos-trading-terminal', '0880-ai-bot', 'financial-panel', 'tienda-informatica'];
-
-                for (const r of repos) {
-                    if (r.fork) continue;
-                    if (!featuredRepos.includes(r.name)) continue;
-
-                    let imageUrl = null;
-
-                    try {
-                        const readmeRes = await fetch(`https://api.github.com/repos/${r.full_name}/readme`, {
-                            headers: { 'Accept': 'application/vnd.github.v3.raw' }
-                        });
-                        if (readmeRes.ok) {
-                            const readmeContent = await readmeRes.text();
-                            if (hasImagesInReadme(readmeContent)) {
-                                const extracted = extractFirstImage(readmeContent);
-                                if (extracted) {
-                                    imageUrl = extracted.startsWith('http') ? extracted : `https://raw.githubusercontent.com/${r.full_name}/${r.default_branch}/${extracted}`;
-                                }
-                            }
-                        }
-                    } catch (e) {
-                        console.log('README fetch failed for', r.name, e);
-                    }
-
-                    if (!imageUrl) {
-                        imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
-                    }
-
+                featured.forEach(r => {
                     const card = document.createElement('a');
                     card.className = 'repo-card';
                     card.href = r.html_url;
@@ -395,6 +350,7 @@
 
                     const langColor = langColors[r.language] || '#666';
                     const description = r.description || 'Sin descripción';
+                    const imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
 
                     card.innerHTML = `
                         <img class="repo-card-image" src="${imageUrl}" alt="" loading="lazy" onerror="this.style.display='none'">
@@ -411,10 +367,10 @@
                         </div>
                     `;
                     grid.appendChild(card);
-                }
-                if (grid.children.length) document.getElementById('repos').classList.add('visible');
+                });
+                document.getElementById('repos').classList.add('visible');
             } catch (e) {
-                console.error('loadRepos error:', e);
+                console.error('loadRepos:', e);
             }
         }
 
