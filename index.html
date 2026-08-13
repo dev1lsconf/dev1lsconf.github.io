@@ -22,6 +22,8 @@
             --icon-x: #000;
             --icon-masto: #6364FF;
             --icon-gh: #181717;
+            --star-color: rgba(17, 17, 17, 0.6);
+            --star-glow: rgba(17, 17, 17, 0.3);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -35,6 +37,8 @@
                 --icon-x: #fff;
                 --icon-masto: #8b8dff;
                 --icon-gh: #fff;
+                --star-color: rgba(240, 240, 240, 0.7);
+                --star-glow: rgba(240, 240, 240, 0.4);
             }
         }
 
@@ -42,6 +46,16 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
 
         body {
@@ -174,6 +188,7 @@
     </style>
 </head>
 <body>
+    <canvas id="starfield"></canvas>
     <img class="avatar" src="https://res.cloudinary.com/djeqn9kjl/image/upload/v1781920013/eric_oumzl2.png" alt="avatar" loading="lazy">
     <div class="logo">dev1ls</div>
     <div class="bio">Developer Junior · bsd &amp; linux</div>
@@ -214,7 +229,91 @@
             } catch (_) {}
         }
 
-        document.addEventListener('DOMContentLoaded', () => { loadRepos(); });
+        document.addEventListener('DOMContentLoaded', () => { loadRepos(); initStarfield(); });
+
+        function initStarfield() {
+            const canvas = document.getElementById('starfield');
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+            let animationId = null;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function createStars() {
+                stars = [];
+                const starCount = Math.min(200, Math.floor((canvas.width * canvas.height) / 30000));
+                for (let i = 0; i < starCount; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 1.5 + 0.3,
+                        alpha: Math.random() * 0.5 + 0.2,
+                        delta: (Math.random() - 0.5) * 0.02,
+                        speed: Math.random() * 0.3 + 0.1
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const baseRgb = isDark ? '240, 240, 240' : '17, 17, 17';
+
+                stars.forEach(star => {
+                    star.alpha += star.delta;
+                    if (star.alpha <= 0.15 || star.alpha >= 0.95) {
+                        star.delta = -star.delta;
+                    }
+                    star.y -= star.speed;
+                    if (star.y < -star.radius) {
+                        star.y = canvas.height + star.radius;
+                        star.x = Math.random() * canvas.width;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${baseRgb}, ${star.alpha})`;
+                    ctx.fill();
+
+                    if (star.radius > 1) {
+                        ctx.shadowBlur = 4;
+                        ctx.shadowColor = `rgba(${baseRgb}, ${star.alpha * 0.6})`;
+                        ctx.fill();
+                        ctx.shadowBlur = 0;
+                    }
+                });
+
+                animationId = requestAnimationFrame(draw);
+            }
+
+            function start() {
+                resize();
+                createStars();
+                draw();
+            }
+
+            function stop() {
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            }
+
+            window.addEventListener('resize', () => {
+                resize();
+                createStars();
+            });
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                createStars();
+            });
+
+            start();
+        }
     </script>
 </body>
 </html>
