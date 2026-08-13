@@ -336,42 +336,64 @@
                     'Vue': '#41b883', 'Svelte': '#ff3e00', 'Astro': '#ff5a03'
                 };
 
+                function hasImagesInReadme(readmeContent) {
+                    if (!readmeContent) return false;
+                    const markdownImages = readmeContent.match(/!\[.*?\]\((.*?)\)/g);
+                    const htmlImages = readmeContent.match(/<img\s+[^>]*src=["']([^"']+)["']/gi);
+                    return (markdownImages && markdownImages.length > 0) || (htmlImages && htmlImages.length > 0);
+                }
+
+                function extractFirstImage(readmeContent) {
+                    if (!readmeContent) return null;
+                    const mdMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/);
+                    if (mdMatch) return mdMatch[1];
+                    const htmlMatch = readmeContent.match(/<img\s+[^>]*src=["']([^"']+)["']/i);
+                    if (htmlMatch) return htmlMatch[1];
+                    return null;
+                }
+
                 for (const r of repos) {
                     if (r.fork) continue;
 
-                    const imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
-
                     try {
-                        const imgRes = await fetch(imageUrl, { method: 'HEAD' });
-                        if (!imgRes.ok) continue;
-                    } catch {
-                        continue;
-                    }
+                        const readmeRes = await fetch(`https://api.github.com/repos/${r.full_name}/readme`, {
+                            headers: { 'Accept': 'application/vnd.github.v3.raw' }
+                        });
+                        if (!readmeRes.ok) continue;
+                        const readmeContent = await readmeRes.text();
 
-                    const card = document.createElement('a');
-                    card.className = 'repo-card';
-                    card.href = r.html_url;
-                    card.target = '_blank';
-                    card.rel = 'noopener noreferrer';
+                        if (!hasImagesInReadme(readmeContent)) continue;
 
-                    const langColor = langColors[r.language] || '#666';
-                    const description = r.description || 'Sin descripción';
+                        const imageUrl = extractFirstImage(readmeContent);
+                        if (!imageUrl) continue;
 
-                    card.innerHTML = `
-                        <img class="repo-card-image" src="${imageUrl}" alt="" loading="lazy">
-                        <div class="repo-card-content">
-                            <div class="repo-card-header">
-                                <span class="repo-card-name">${r.name}</span>
-                                ${r.language ? `<span class="repo-card-language"><span class="repo-card-language-dot" style="background:${langColor}"></span>${r.language}</span>` : ''}
+                        const card = document.createElement('a');
+                        card.className = 'repo-card';
+                        card.href = r.html_url;
+                        card.target = '_blank';
+                        card.rel = 'noopener noreferrer';
+
+                        const langColor = langColors[r.language] || '#666';
+                        const description = r.description || 'Sin descripción';
+
+                        const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://raw.githubusercontent.com/${r.full_name}/${r.default_branch}/${imageUrl}`;
+
+                        card.innerHTML = `
+                            <img class="repo-card-image" src="${absoluteImageUrl}" alt="" loading="lazy" onerror="this.style.display='none'">
+                            <div class="repo-card-content">
+                                <div class="repo-card-header">
+                                    <span class="repo-card-name">${r.name}</span>
+                                    ${r.language ? `<span class="repo-card-language"><span class="repo-card-language-dot" style="background:${langColor}"></span>${r.language}</span>` : ''}
+                                </div>
+                                <p class="repo-card-description">${description}</p>
+                                <div class="repo-card-stats">
+                                    <span class="repo-card-stat">⭐ ${r.stargazers_count}</span>
+                                    <span class="repo-card-stat">🍴 ${r.forks_count}</span>
+                                </div>
                             </div>
-                            <p class="repo-card-description">${description}</p>
-                            <div class="repo-card-stats">
-                                <span class="repo-card-stat">⭐ ${r.stargazers_count}</span>
-                                <span class="repo-card-stat">🍴 ${r.forks_count}</span>
-                            </div>
-                        </div>
-                    `;
-                    grid.appendChild(card);
+                        `;
+                        grid.appendChild(card);
+                    } catch (_) {}
                 }
                 if (grid.children.length) document.getElementById('repos').classList.add('visible');
             } catch (_) {}
