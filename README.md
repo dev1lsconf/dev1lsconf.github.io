@@ -1,52 +1,52 @@
 # dev1lsconf.github.io
 
-Personal portfolio site for **dev1ls** — Full-stack developer, BSD & Linux user.
+Sitio web personal de **dev1ls** — Desarrollador full-stack, usuario de BSD y Linux.
 
 ## Stack
 
-- **HTML/CSS/JS** — Vanilla, no frameworks
-- **Tailwind CSS** — Via CDN (utility-first styling)
-- **GitHub Pages** — Static hosting
-- **GitHub API** — Dynamic repo fetching
+- **HTML/CSS/JS** — Vanilla, sin frameworks
+- **Tailwind CSS** — Vía CDN (utility-first styling)
+- **GitHub Pages** — Hosting estático
+- **GitHub API** — Obtención dinámica de repositorios
 
-## Features
+## Características
 
-- **Animated starfield background** — Canvas-based, respects `prefers-color-scheme`
-- **Responsive design** — Mobile-first, works on all screen sizes
-- **Dark/Light mode** — Automatic via CSS media queries
-- **Live GitHub repos grid** — Fetches public repos, shows OpenGraph images, language, stars/forks
-- **SEO ready** — OpenGraph, meta tags, semantic HTML
-- **Performance** — Lighthouse > 95, minimal JS, lazy-loaded images
+- **Fondo animado de estrellas** — Canvas-based, respeta `prefers-color-scheme`
+- **Diseño responsive** — Mobile-first, funciona en todas las pantallas
+- **Modo oscuro/claro** — Automático vía CSS media queries
+- **Grid de repositorios de GitHub** — Obtiene repos públicos, muestra imágenes OpenGraph, lenguaje, stars/forks
+- **SEO ready** — OpenGraph, meta tags, HTML semántico
+- **Rendimiento** — Lighthouse > 95, JS mínimo, imágenes lazy-loaded
 
-## Project Structure
+## Estructura del proyecto
 
 ```
-├── index.html      # Single-file app (HTML + CSS + JS)
-├── twtxt.txt       # twtxt feed
-└── README.md       # This file
+├── index.html      # App single-file (HTML + CSS + JS)
+├── twtxt.txt       # Feed twtxt
+└── README.md       # Este archivo
 ```
 
-## Development
+## Desarrollo
 
 ```bash
-# Serve locally
+# Servir localmente
 npx serve .
-# or
+# o
 python3 -m http.server 8000
 ```
 
-## Deployment
+## Despliegue
 
-Push to `main` branch → GitHub Pages auto-deploys from root.
+Push a rama `main` → GitHub Pages despliega automáticamente desde root.
 
-## Customization
+## Personalización
 
-Edit `index.html` to change:
-- Avatar, name, bio, links
-- Excluded repos list (line ~355)
-- Starfield density (line ~395)
-- Color palette (CSS `:root` variables)
+Edita `index.html` para cambiar:
+- Avatar, nombre, bio, enlaces
+- Lista de repos excluidos (línea ~355)
+- Densidad del starfield (línea ~395)
+- Paleta de colores (variables CSS `:root`)
 
-## License
+## Licencia
 
 MIT
