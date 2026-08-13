@@ -352,16 +352,6 @@
                     return null;
                 }
 
-                async function checkOpenGraphImage(fullName) {
-                    const url = `https://opengraph.githubassets.com/1/${fullName}`;
-                    try {
-                        const r = await fetch(url, { method: 'HEAD' });
-                        return r.ok ? url : null;
-                    } catch {
-                        return null;
-                    }
-                }
-
                 const excludedRepos = ['dev1lsconf', 'nixos-config', 'twtxt_tui', 'blog', 'grasa-club'];
 
                 for (const r of repos) {
@@ -386,10 +376,8 @@
                     } catch (_) {}
 
                     if (!imageUrl) {
-                        imageUrl = await checkOpenGraphImage(r.full_name);
+                        imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
                     }
-
-                    if (!imageUrl) continue;
 
                     const card = document.createElement('a');
                     card.className = 'repo-card';
