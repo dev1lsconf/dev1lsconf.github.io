@@ -358,11 +358,11 @@
                     return null;
                 }
 
-                const excludedRepos = ['dev1lsconf', 'nixos-config', 'twtxt_tui', 'blog', 'grasa-club'];
+                const featuredRepos = ['elitos-trading-terminal', '0880-ai-bot', 'financial-panel', 'tienda-informatica'];
 
                 for (const r of repos) {
                     if (r.fork) continue;
-                    if (excludedRepos.includes(r.name)) continue;
+                    if (!featuredRepos.includes(r.name)) continue;
 
                     let imageUrl = null;
 
