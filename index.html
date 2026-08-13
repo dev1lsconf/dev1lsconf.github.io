@@ -328,27 +328,37 @@
                 if (!res.ok) throw new Error();
                 const repos = await res.json();
                 const grid = document.getElementById('reposGrid');
-                repos.forEach(r => {
-                    if (r.fork) return;
+
+                const langColors = {
+                    'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5',
+                    'HTML': '#e34c26', 'CSS': '#563d7c', 'Rust': '#dea584',
+                    'Go': '#00ADD8', 'Dockerfile': '#384d54', 'Shell': '#89e051',
+                    'Vue': '#41b883', 'Svelte': '#ff3e00', 'Astro': '#ff5a03'
+                };
+
+                for (const r of repos) {
+                    if (r.fork) continue;
+
+                    const imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
+
+                    try {
+                        const imgRes = await fetch(imageUrl, { method: 'HEAD' });
+                        if (!imgRes.ok) continue;
+                    } catch {
+                        continue;
+                    }
+
                     const card = document.createElement('a');
                     card.className = 'repo-card';
                     card.href = r.html_url;
                     card.target = '_blank';
                     card.rel = 'noopener noreferrer';
 
-                    const langColors = {
-                        'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5',
-                        'HTML': '#e34c26', 'CSS': '#563d7c', 'Rust': '#dea584',
-                        'Go': '#00ADD8', 'Dockerfile': '#384d54', 'Shell': '#89e051',
-                        'Vue': '#41b883', 'Svelte': '#ff3e00', 'Astro': '#ff5a03'
-                    };
                     const langColor = langColors[r.language] || '#666';
-
-                    const imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
                     const description = r.description || 'Sin descripción';
 
                     card.innerHTML = `
-                        <img class="repo-card-image" src="${imageUrl}" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img class="repo-card-image" src="${imageUrl}" alt="" loading="lazy">
                         <div class="repo-card-content">
                             <div class="repo-card-header">
                                 <span class="repo-card-name">${r.name}</span>
@@ -362,8 +372,8 @@
                         </div>
                     `;
                     grid.appendChild(card);
-                });
-                if (repos.length) document.getElementById('repos').classList.add('visible');
+                }
+                if (grid.children.length) document.getElementById('repos').classList.add('visible');
             } catch (_) {}
         }
 
