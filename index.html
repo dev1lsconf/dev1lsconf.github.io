@@ -213,13 +213,6 @@
             }
         }
 
-        .repo-card-image {
-            width: 100%;
-            height: 160px;
-            background: var(--line);
-            object-fit: cover;
-        }
-
         .repo-card-content {
             padding: 1rem;
             display: flex;
@@ -350,10 +343,8 @@
 
                     const langColor = langColors[r.language] || '#666';
                     const description = r.description || 'Sin descripción';
-                    const imageUrl = `https://opengraph.githubassets.com/1/${r.full_name}`;
 
                     card.innerHTML = `
-                        <img class="repo-card-image" src="${imageUrl}" alt="" loading="lazy" onerror="this.style.display='none'">
                         <div class="repo-card-content">
                             <div class="repo-card-header">
                                 <span class="repo-card-name">${r.name}</span>
